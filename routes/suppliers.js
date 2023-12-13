@@ -49,7 +49,8 @@ router.post('/save', function(req, res, next) {
   });
 
 router.put('/update/:id', function(req, res, next) { 
-    let {id,SupplierName, ContactName, Address, City, PostalCode, Country, Phone} = req.body;
+  let id = parseInt(req.params.id);
+    let {SupplierName, ContactName, Address, City, PostalCode, Country, Phone} = req.body;
         
     Suppliers.update({
         SupplierName: SupplierName, 
@@ -62,7 +63,9 @@ router.put('/update/:id', function(req, res, next) {
     },
     {
         where: {
-            SupplierID: parseInt(id)
+          [Op.and]: [
+            {SupplierID: id}
+          ]
         }
     })
     .then(data => {  
