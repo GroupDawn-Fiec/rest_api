@@ -9,7 +9,16 @@ var usersRouter = require('./routes/users');
 
 var suppliersRouter = require('./routes/suppliers');
 
+/* REFERENCIA AL MÓDULO */
+const swaggerUi = require('swagger-ui-express')
+
+/* REFERENCIA AL ARCHIVO GENERADO */
+const swaggerFile = require('./swagger_output.json')
+
+
 var app = express();
+/* CONFIGURACIÓN DE LA RUTA A LA DOCUMENTACIÓN */
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
