@@ -42,7 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use('/suppliers', suppliersRouter);
 
 /* Agregue el middleware para la ruta '/suppliers' */
 app.use('/suppliers', authJWT, suppliersRouter);

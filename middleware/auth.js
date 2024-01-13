@@ -14,7 +14,7 @@ var authenticateJWT = (req, res, next) => {
             }
 
             /* Datos del usuario */
-            console.log(payload)
+            console.log(payload, "HERERERERERERERERERER")
 
             /* Forma parte del requerimiento */
             req.user = payload;
