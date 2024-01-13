@@ -7,7 +7,7 @@
   },
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "host": "restapi-production-355d.up.railway.app",
 
